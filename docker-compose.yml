@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  ubuntu:
+    image: ubuntu
+    volumes:
+      - ./:/code
+    command: bash -c "apt update && apt install gcc-arm-none-eabi make -y && cd /code && make clean all"
