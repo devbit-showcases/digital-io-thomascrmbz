@@ -23,3 +23,9 @@ Copy the **.bin** file in the BUILD folder to the NUCLEO drive
 ## More information
 
 https://microcontrollers.netlify.app/digital-io
+
+## Pinouts
+
+Red LED: PA6
+Green LED: PA7
+Button: PB6

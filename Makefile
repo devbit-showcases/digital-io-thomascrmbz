@@ -46,7 +46,7 @@ PROJECT := mbed_blinky
 ###############################################################################
 # Objects and Paths
 
-OBJECTS += main.o
+OBJECTS += main.o digital_io.o
 
  SYS_OBJECTS += mbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_GCC_ARM/PeripheralPins.o
  SYS_OBJECTS += mbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_GCC_ARM/analogin_api.o
