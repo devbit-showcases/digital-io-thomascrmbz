@@ -18,17 +18,13 @@ void approx_wait(uint32_t milliseconds)
 
 int main()
 {
+    uint8_t i = 0;
     while (true) {
-        DigitalIO().write(DigitalIO::pin::PA5, true);
-        DigitalIO().write(DigitalIO::pin::PA6, true);
-        DigitalIO().write(DigitalIO::pin::PA7, true);
-        DigitalIO().write(DigitalIO::pin::PB6, true);
-        approx_wait(500);
-
-        DigitalIO().write(DigitalIO::pin::PA5, false);
-        DigitalIO().write(DigitalIO::pin::PA6, false);
-        DigitalIO().write(DigitalIO::pin::PA7, false);
-        DigitalIO().write(DigitalIO::pin::PB6, false);
-        approx_wait(500);
+        while(DigitalIO().read(DigitalIO::pin::PB6)) {
+            DigitalIO().write(DigitalIO::pin::PA6, i & 0x1);
+            DigitalIO().write(DigitalIO::pin::PA7, i & 0x2);
+            i++;
+            approx_wait(500);
+        }
     }
 }
